@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Diary App</title>
+</head>
+<body>
+    <h1>Diary App by Django</h1>
+    {% for diary in diary_list %}
+    <p>
+        {{ diary.date }}
+        {{ diary.title }}
+        {{ diary.text }}
+        <a href="{% url 'diary:diary_update' diary.pk %}">編集</a>
+    </p>
+    {% endfor %}
+    <a href="{% url 'diary:index' %}">トップへ戻る</a>
+</body>
+</html>
+<!--次回：管理者画面の作成、日記の編集、削除までで完成！ー＞課題：pythonの機能を持つ、webサイトを作ってみよう-->
